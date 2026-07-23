@@ -1,0 +1,25 @@
+resources:
+  jobs:
+    dabtestjob2:
+      name: test_dev2
+      email_notifications:
+        on_success:
+          - nalluri.sch@gmail.com
+        on_failure:
+          - nalluriravi3@gmail.com
+      # schedule:
+      #   quartz_cron_expression: 0 35 21 * * ?
+      #   timezone_id: Asia/Calcutta
+      #   pause_status: UNPAUSED
+      tasks:
+        - task_key: job21
+          notebook_task:
+            notebook_path: /Workspace/Users/nalluriravi3@gmail.com/DAB-Local/dab-test/src/dabtest1
+              notebook
+            source: WORKSPACE
+      queue:
+        enabled: true
+      parameters:
+        - name: catalog
+          default: default
+      performance_target: PERFORMANCE_OPTIMIZED

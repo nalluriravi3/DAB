@@ -1,0 +1,36 @@
+bundle:
+  name: "dab-dev"
+
+include:
+  - resources/*.yml
+  - resources/*/*.yml
+  
+variables:
+  catalog:
+    description: Catalog name
+  schema:
+    description: Schema name
+  job_name:
+    description: Job name
+
+targets:
+  dev:
+    mode: development
+    workspace:
+      host: https://dbc-dac97d47-9b88.cloud.databricks.com
+      
+    variables:
+      catalog: dev
+      schema: testschemadev
+      job_name: ymltestjob-dev
+
+  prod:
+    mode: production
+    workspace:
+      host: https://dbc-dac97d47-9b88.cloud.databricks.com
+      root_path: /Workspace/Users/nalluriravi3@gmail.com/.bundle/dab-dev/prod
+      
+    variables:
+      catalog: qa
+      schema: testschema
+      job_name: ymltestjob-prod
