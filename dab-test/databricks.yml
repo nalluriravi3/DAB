@@ -1,5 +1,5 @@
 bundle:
-  name: "dab-dev"
+  name: "dab-prod"
 
 include:
   - resources/*.yml

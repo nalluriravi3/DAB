@@ -1,7 +1,7 @@
 resources:
   jobs:
-    dabtestjob2:
-      name: test_dev2
+    dabtestjob3:
+      name: test_dev3
       email_notifications:
         on_success:
           - nalluri.sch@gmail.com
@@ -17,6 +17,14 @@ resources:
             notebook_path: /Workspace/Users/nalluriravi3@gmail.com/DAB-Local/dab-test/src/dabtest1
               notebook
             source: WORKSPACE
+        - task_key: job22
+          depends_on:
+            - task_key: job21
+          notebook_task:
+            notebook_path: /Workspace/Users/nalluriravi3@gmail.com/DAB-Local/dab-test/src/dabtest2
+              notebook
+            source: WORKSPACE
+            
       queue:
         enabled: true
       parameters:
